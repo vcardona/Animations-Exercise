@@ -7,12 +7,35 @@
 //
 
 import UIKit
+import Lottie
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+{
 
-    override func viewDidLoad() {
+    @IBOutlet private var animationView: LOTAnimationView!
+    
+    @IBOutlet var thirdAnimationView: LOTAnimationView!
+    @IBOutlet var animationViewSecond: LOTAnimationView!
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        startAnimation()
+        
+    }
+    
+    func startAnimation()
+    {
+        animationView.setAnimation(named: "payforeveryting")
+        animationView.play()
+        animationView.loopAnimation = true
+        
+        animationViewSecond.setAnimation(named: "loader")
+        animationViewSecond.play()
+        animationViewSecond.loopAnimation = true
+        
+        thirdAnimationView.setAnimation(named: "charging")
+        thirdAnimationView.play()
+        thirdAnimationView.loopAnimation = true
     }
 
 
